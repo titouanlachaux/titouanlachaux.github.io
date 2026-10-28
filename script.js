@@ -1,34 +1,37 @@
-// Navigation entre les 6 sections, avec transition directionnelle
-var links = document.querySelectorAll("nav a");
-var panels = document.querySelectorAll(".panel");
-
-function showSection() {
-  // l'identifiant vient de l'URL (#engineering, #career...), par défaut : welcome
-  var id = window.location.hash.replace("#", "") || "welcome";
-  var current = 0;
-
-  for (var i = 0; i < panels.length; i++) {
-    if (panels[i].id === id) {
-      current = i;
+// 1. Apparition en douceur des blocs quand on arrive dessus
+var blocks = document.querySelectorAll(".card, .skills > div, .intro, h2, .button");
+var revealObserver = new IntersectionObserver(function (entries) {
+  for (var i = 0; i < entries.length; i++) {
+    if (entries[i].isIntersecting) {
+      entries[i].target.classList.add("visible");
+      revealObserver.unobserve(entries[i].target);
     }
   }
+}, { threshold: 0.15 });
 
-  for (var j = 0; j < panels.length; j++) {
-    // la section affichée est "active", celles qui la précèdent sont "before"
-    panels[j].classList.toggle("active", j === current);
-    panels[j].classList.toggle("before", j < current);
-    panels[j].setAttribute("aria-hidden", j !== current);
-
-    links[j].classList.toggle("active", j === current);
-    if (j === current) {
-      links[j].setAttribute("aria-current", "page");
-    } else {
-      links[j].removeAttribute("aria-current");
-    }
-  }
-
-  panels[current].scrollTop = 0;
+for (var i = 0; i < blocks.length; i++) {
+  blocks[i].classList.add("reveal");
+  revealObserver.observe(blocks[i]);
 }
 
-window.addEventListener("hashchange", showSection);
-showSection();
+// 2. Le lien du menu correspondant à la section visible est mis en surbrillance
+var links = document.querySelectorAll("nav a");
+var sections = document.querySelectorAll("section");
+
+var navObserver = new IntersectionObserver(function (entries) {
+  for (var i = 0; i < entries.length; i++) {
+    if (entries[i].isIntersecting) {
+      for (var j = 0; j < links.length; j++) {
+        var cible = links[j].getAttribute("href") === "#" + entries[i].target.id;
+        links[j].classList.toggle("active", cible);
+        if (cible) {
+          links[j].scrollIntoView({ block: "nearest", inline: "center" });
+        }
+      }
+    }
+  }
+}, { rootMargin: "-40% 0px -55% 0px" });
+
+for (var k = 0; k < sections.length; k++) {
+  navObserver.observe(sections[k]);
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Titouan – e-portfolio</title>
+  <title>Titouan Lachaux – e-portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -11,126 +11,193 @@
 </head>
 <body>
 
+<header class="topbar">
+  <a class="logo" href="#welcome">Titouan Lachaux</a>
   <nav aria-label="Sections">
-    <p class="brand">Titouan</p>
     <a href="#welcome">Welcome</a>
-    <a href="#engineering">Engineering course</a>
-    <a href="#mobility">International mobility</a>
-    <a href="#civic">Sustainability &amp; civic engagement</a>
-    <a href="#sport">Sport &amp; other activities</a>
-    <a href="#career">Career development</a>
+    <a href="#engineering">Engineering</a>
+    <a href="#mobility">Mobility</a>
+    <a href="#engagement">Engagement</a>
+    <a href="#activities">Sport &amp; activities</a>
+    <a href="#career">Career</a>
   </nav>
+</header>
 
-  <main>
+<main>
 
-    <!-- 1. WELCOME -->
-    <section class="panel" id="welcome">
-      <svg class="flow" viewBox="0 0 800 340" role="img" aria-label="Airflow around a wing profile">
-        <path d="M0 60 C 200 60 320 30 420 42 S 640 70 800 60"/>
-        <path d="M0 95 C 200 95 320 68 420 80 S 640 102 800 95"/>
-        <path d="M0 130 C 200 130 300 98 410 108 S 640 128 800 130"/>
-        <path d="M0 165 C 180 165 260 140 340 146 S 640 160 800 165"/>
-        <path d="M0 200 C 200 200 330 204 430 200 S 640 196 800 200"/>
-        <path d="M0 235 C 200 235 320 250 430 244 S 640 232 800 235"/>
-        <path d="M0 270 C 200 270 330 278 430 274 S 640 266 800 270"/>
-        <path d="M0 305 C 200 305 330 308 430 306 S 640 302 800 305"/>
-        <path class="wing" d="M260 192 C 300 150 430 140 570 188 C 440 206 330 210 260 192 Z"/>
-      </svg>
-      <h1>Titouan</h1>
+<!-- 1. WELCOME -->
+<section id="welcome" class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">E-portfolio</p>
+      <h1>Titouan Lachaux</h1>
       <p class="lead">Engineering student at Toulouse INP–ENSEEIHT, drawn to fluid mechanics, aerodynamics and aerospace.</p>
-      <p>[Write 3–4 sentences: who you are, what this portfolio shows, what a reader will find in each section.]</p>
-    </section>
+      <ul class="chips">
+        <li>Fluid mechanics</li><li>Aerodynamics</li><li>Aerospace</li>
+      </ul>
+      <p>[3–4 sentences: who you are, what this portfolio contains, what you want a reader to remember.]</p>
+    </div>
+    <!-- Replace the initials by <img src="img/photo.jpg" alt="Portrait of Titouan"> -->
+    <div class="portrait" aria-hidden="true">TL</div>
+  </div>
+  <svg class="flow" viewBox="0 0 800 200" role="img" aria-label="Airflow around a wing profile">
+    <path d="M0 30 C 200 30 320 10 420 20 S 640 40 800 30"/>
+    <path d="M0 60 C 200 60 320 40 420 50 S 640 68 800 60"/>
+    <path d="M0 90 C 200 90 300 66 410 74 S 640 88 800 90"/>
+    <path d="M0 120 C 200 120 330 128 430 124 S 640 118 800 120"/>
+    <path d="M0 150 C 200 150 330 160 430 156 S 640 148 800 150"/>
+    <path d="M0 180 C 200 180 330 186 430 184 S 640 178 800 180"/>
+    <path class="wing" d="M260 108 C 300 82 430 76 570 106 C 440 120 330 124 260 108 Z"/>
+  </svg>
+</section>
 
-    <!-- 2. ENGINEERING COURSE -->
-    <section class="panel" id="engineering">
-      <h2>Engineering course</h2>
-      <p class="lead">[One sentence on why you chose engineering and what you want from your degree.]</p>
-      <div class="entries">
-        <article>
-          <h3>Classes préparatoires (PCSI, PC)</h3>
-          <p>[Skills and what the prépa taught you about working under pressure.]</p>
-        </article>
-        <article>
-          <h3>TIPE: ground effect on a wing</h3>
-          <p>[Question studied, wind tunnel method, main result, what you learned.]</p>
-        </article>
-        <article>
-          <h3>Toulouse INP–ENSEEIHT</h3>
-          <p>[Your programme, key courses, projects, what you expect from it.]</p>
-        </article>
-      </div>
-    </section>
+<!-- 2. ENGINEERING COURSE -->
+<section id="engineering">
+  <div class="wrap">
+    <p class="eyebrow">01</p>
+    <h2>Engineering course</h2>
+    <p class="intro">[One or two sentences on your path: prépa, TIPE, ENSEEIHT, and why.]</p>
 
-    <!-- 3. INTERNATIONAL MOBILITY -->
-    <section class="panel" id="mobility">
-      <h2>International mobility</h2>
-      <p class="lead">[Your plans or experiences abroad: where, when, why.]</p>
-      <div class="entries">
-        <article>
-          <h3>[Country / institution / company]</h3>
-          <p>[What you did, what you discovered, what you would tell someone going there.]</p>
-        </article>
-        <article>
-          <h3>Languages</h3>
-          <p>[Levels, certificates, how you use them.]</p>
-        </article>
-      </div>
-    </section>
+    <h3 class="sub">Projects</h3>
+    <div class="grid">
+      <article class="card">
+        <p class="badge">TIPE · 5/2</p>
+        <h4>Ground effect on a wing</h4>
+        <p>Wind tunnel study of three NACA 6412 variants (standard, BAD, BFD) over flat, sinusoidal and undulating ground. The BFD wing gave the best finesse, with a gain of about 73% when the ground clearance drops from 3 cm to 1 cm.</p>
+        <ul class="chips small"><li>Aerodynamics</li><li>Wind tunnel</li><li>Python</li></ul>
+      </article>
+      <article class="card">
+        <p class="badge">TIPE · 3/2</p>
+        <h4>Biodiesel from used cooking oil</h4>
+        <p>Production of biodiesel by transesterification of used frying oils and animal fats, then measurement of its efficiency and calorific value against petroleum diesel. Results were conclusive.</p>
+        <ul class="chips small"><li>Chemistry</li><li>Energy</li><li>Experiment</li></ul>
+      </article>
+      <article class="card">
+        <p class="badge">Student project</p>
+        <h4>N7 Racing Team (Formula Student)</h4>
+        <p>Member of the aerodynamics team: flat floor, wings and diffusers. [Add your concrete contribution and results.]</p>
+        <ul class="chips small"><li>Formula Student</li><li>Aerodynamics</li><li>Teamwork</li></ul>
+      </article>
+    </div>
 
-    <!-- 4. SUSTAINABILITY & CIVIC ENGAGEMENT -->
-    <section class="panel" id="civic">
-      <h2>Sustainability &amp; civic engagement</h2>
-      <p class="lead">[Your view of the engineer's responsibility towards society and the planet.]</p>
-      <div class="entries">
-        <article>
-          <h3>[Association / volunteering / initiative]</h3>
-          <p>[Your role, actions, impact.]</p>
-        </article>
-        <article>
-          <h3>Sustainability in aerospace</h3>
-          <p>[A reflection, an article read, a course, a personal position.]</p>
-        </article>
-      </div>
-    </section>
+    <h3 class="sub">Skills</h3>
+    <div class="grid skills">
+      <div><h4>Tools</h4><p>[Python, Matlab, CAD, CFD software…]</p></div>
+      <div><h4>Science</h4><p>[Fluid mechanics, thermodynamics, quantum mechanics…]</p></div>
+      <div><h4>Soft skills</h4><p>[Teamwork, rigour, project management…]</p></div>
+    </div>
+  </div>
+</section>
 
-    <!-- 5. SPORT & OTHER ACTIVITIES -->
-    <section class="panel" id="sport">
-      <h2>Sport &amp; other activities</h2>
-      <p class="lead">[What these activities bring you: discipline, team spirit, balance.]</p>
-      <div class="entries">
-        <article>
-          <h3>[Sport]</h3>
-          <p>[Level, frequency, achievements, what it taught you.]</p>
-        </article>
-        <article>
-          <h3>Percussion</h3>
-          <p>[Years of practice, conservatoire, performances.]</p>
-        </article>
-      </div>
-    </section>
+<!-- 3. INTERNATIONAL MOBILITY -->
+<section id="mobility">
+  <div class="wrap">
+    <p class="eyebrow">02</p>
+    <h2>International mobility</h2>
+    <p class="intro">[Your goal abroad: semester, gap year, internship. Where and why.]</p>
+    <div class="grid">
+      <article class="card">
+        <h4>Languages</h4>
+        <p><strong>English:</strong> B2<br><strong>Spanish:</strong> [level], European section at the baccalauréat</p>
+      </article>
+      <article class="card">
+        <h4>Mobility plans</h4>
+        <p>[Target countries or universities, what you want to learn there, how it fits your career plan.]</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <!-- 6. CAREER DEVELOPMENT -->
-    <section class="panel" id="career">
-      <h2>Career development</h2>
-      <p class="lead">[Your professional project in two sentences.]</p>
-      <div class="entries">
-        <article>
-          <h3>Strengths and skills</h3>
-          <p>[3 or 4 skills, each backed by a concrete example.]</p>
-        </article>
-        <article>
-          <h3>Short-term plan</h3>
-          <p>[Internships, specialisation, what you need to learn.]</p>
-        </article>
-        <article>
-          <h3>Long-term vision</h3>
-          <p>[Sector, type of job, the kind of engineer you want to become.]</p>
-        </article>
-      </div>
-    </section>
+<!-- 4. SUSTAINABILITY & CIVIC ENGAGEMENT -->
+<section id="engagement">
+  <div class="wrap">
+    <p class="eyebrow">03</p>
+    <h2>Sustainability &amp; civic engagement</h2>
+    <p class="intro">[Your view of the engineer's responsibility towards society and the planet.]</p>
+    <div class="grid">
+      <article class="card">
+        <h4>[Association or initiative]</h4>
+        <p>[Your role, your actions, what it taught you.]</p>
+      </article>
+      <article class="card">
+        <h4>Biofuels and energy</h4>
+        <p>[Link your biodiesel TIPE to sustainability: what you learned about alternatives to fossil fuels.]</p>
+      </article>
+      <article class="card">
+        <h4>[Workshop, conference, event]</h4>
+        <p>[What you attended and what you took from it.]</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-  </main>
+<!-- 5. SPORT & OTHER ACTIVITIES -->
+<section id="activities">
+  <div class="wrap">
+    <p class="eyebrow">04</p>
+    <h2>Sport &amp; other activities</h2>
+    <p class="intro">[What these activities bring you: team spirit, discipline, balance.]</p>
+    <div class="grid">
+      <article class="card">
+        <p class="badge">Sport</p>
+        <h4>Rugby</h4>
+        <p>Seven years of practice, now licensed at AS Toulouse-INP. [What it taught you about teamwork.]</p>
+      </article>
+      <article class="card">
+        <p class="badge">Sport</p>
+        <h4>Other sports</h4>
+        <p>Judo (3 years), tennis (4 years), and the Étoile d'or in skiing.</p>
+      </article>
+      <article class="card">
+        <p class="badge">Music</p>
+        <h4>Percussion</h4>
+        <p>Third cycle of music theory and end of second cycle in percussion at the Conservatoire Gabriel Pierné in Metz. [Orchestras, concerts, what it taught you.]</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- 6. CAREER DEVELOPMENT -->
+<section id="career">
+  <div class="wrap">
+    <p class="eyebrow">05</p>
+    <h2>Career development</h2>
+    <p class="intro">[Your professional project in two sentences.]</p>
+
+    <p><a class="button" href="assets/CV_Titouan_Lachaux.pdf">Download my CV</a></p>
+
+    <h3 class="sub">Experience</h3>
+    <div class="timeline">
+      <article class="card">
+        <p class="badge">Summer 2026 · 1 month</p>
+        <h4>Temporary job, Flunch</h4>
+        <p>Via Adecco. [What you did, what you learned about teamwork and pace of work.]</p>
+      </article>
+    </div>
+
+    <h3 class="sub">Next step</h3>
+    <article class="card">
+      <h4>Internship, 6–8 weeks from 7 June 2027</h4>
+      <p>[Sectors and companies you target, what you want to discover.]</p>
+    </article>
+
+    <h3 class="sub">Strengths and long-term vision</h3>
+    <div class="grid skills">
+      <div><h4>Strengths</h4><p>[3 or 4 strengths, each with a concrete example.]</p></div>
+      <div><h4>Long-term vision</h4><p>[Sector, type of job, the engineer you want to become.]</p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>[Your email · LinkedIn link]</p>
+    <p>© 2026 Titouan Lachaux</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
