@@ -1,14 +1,14 @@
 :root {
-  --paper: #F4F7FA;
+  --paper: #FAFAFA;
   --white: #FFFFFF;
-  --ink: #0A192F;
-  --soft: #334155;
-  --flow: #0284C7;       /* Bleu électrique plus dynamique */
-  --flow-light: #E0F2FE;
-  --signal: #F43F5E;     /* Rose/Rouge corail punchy pour les accents */
-  --mist: #CBD5E1;
-  --display: "Bricolage Grotesque", system-ui, sans-serif;
-  --body: "Newsreader", Georgia, serif;
+  --ink: #09090B;
+  --soft: #52525B;
+  --flow: #2563EB;
+  --flow-light: #EFF6FF;
+  --signal: #E11D48;
+  --mist: #E4E4E7;
+  /* Nouvelle police moderne et épurée partout */
+  --font-main: "Inter", system-ui, -apple-system, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -17,12 +17,12 @@ body {
   margin: 0; 
   background: var(--paper); 
   color: var(--ink); 
-  font-family: var(--body); 
-  font-size: 1.15rem; 
+  font-family: var(--font-main); 
+  font-size: 1.05rem; 
   line-height: 1.6; 
 }
 
-.wrap { max-width: 1050px; margin: 0 auto; padding: 0 2rem; }
+.wrap { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
 a { color: var(--flow); text-decoration: none; transition: color 0.2s; }
 a:hover { color: var(--signal); }
 a:focus-visible { outline: 3px solid var(--flow); outline-offset: 3px; }
@@ -32,14 +32,14 @@ a:focus-visible { outline: 3px solid var(--flow); outline-offset: 3px; }
   position: sticky; top: 0; z-index: 100;
   display: flex; justify-content: space-between; align-items: center; gap: 1.5rem;
   padding: 1rem 2.5rem;
-  background: rgba(244, 247, 250, 0.85);
+  background: rgba(250, 250, 250, 0.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--mist);
 }
 .logo { 
-  font-family: var(--display); 
+  font-family: var(--font-main); 
   font-weight: 800; 
-  font-size: 1.3rem; 
+  font-size: 1.2rem; 
   color: var(--ink); 
   text-decoration: none; 
   white-space: nowrap; 
@@ -47,119 +47,170 @@ a:focus-visible { outline: 3px solid var(--flow); outline-offset: 3px; }
 nav { display: flex; gap: 0.3rem; overflow-x: auto; }
 nav a {
   padding: 0.5rem 1rem; border-radius: 999px; white-space: nowrap;
-  font-family: var(--display); font-weight: 600; font-size: 0.95rem;
+  font-family: var(--font-main); font-weight: 500; font-size: 0.9rem;
   color: var(--soft); text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 nav a:hover { color: var(--flow); background: var(--flow-light); }
-nav a.active { background: var(--ink); color: var(--white); box-shadow: 0 4px 12px rgba(10, 25, 47, 0.2); }
+nav a.active { background: var(--ink); color: var(--white); }
 
-/* ---------- Sections ---------- */
-section { padding: 6rem 0; scroll-margin-top: 70px; border-bottom: 1px solid rgba(203, 213, 225, 0.4); }
+/* ---------- Sections & Titres centrés ---------- */
+section { padding: 6rem 0; scroll-margin-top: 70px; border-bottom: 1px solid var(--mist); text-align: center; }
 section:nth-of-type(even) { background: var(--white); }
 
-h1, h2, h3, h4 { font-family: var(--display); line-height: 1.1; margin: 0; color: var(--ink); }
-h1 { font-size: clamp(2.8rem, 7vw, 5.2rem); font-weight: 800; letter-spacing: -0.03em; }
-h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; }
-h4 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--ink); }
+/* On s'assure que les conteneurs internes réalignent le texte à gauche pour le contenu, mais gardent les titres au centre */
+.wrap { text-align: left; }
+
+h1, h2, h3, h4 { font-family: var(--font-main); line-height: 1.1; margin: 0; color: var(--ink); }
+h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 800; letter-spacing: -0.03em; }
+
+/* Titres principaux centrés */
+section h2 { 
+  text-align: center; 
+  font-size: clamp(2rem, 3.5vw, 2.8rem); 
+  font-weight: 800; 
+  letter-spacing: -0.02em; 
+  margin-bottom: 0.5rem; 
+}
+
+section .intro { 
+  text-align: center; 
+  max-width: 60ch; 
+  margin: 0 auto 3rem auto; 
+  font-size: 1.15rem; 
+  color: var(--soft); 
+}
+
+h4 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--ink); }
 
 .sub { 
-  font-family: var(--display);
-  font-size: 0.95rem; 
+  font-family: var(--font-main);
+  font-size: 0.85rem; 
   font-weight: 700; 
   letter-spacing: 0.1em; 
   text-transform: uppercase; 
   color: var(--flow); 
-  margin: 3.5rem 0 1.2rem; 
+  margin: 3rem 0 1.2rem; 
+  text-align: center;
 }
 .eyebrow { 
   margin: 0 0 0.5rem; 
-  font-family: var(--display); 
+  font-family: var(--font-main); 
   font-weight: 700; 
-  font-size: 0.85rem; 
+  font-size: 0.8rem; 
   letter-spacing: 0.15em; 
   text-transform: uppercase; 
   color: var(--signal); 
 }
-.lead { font-size: 1.4rem; line-height: 1.5; max-width: 42ch; margin: 1.2rem 0; color: var(--soft); }
-.intro { max-width: 60ch; font-size: 1.25rem; color: var(--soft); }
+.lead { font-size: 1.25rem; line-height: 1.5; max-width: 42ch; margin: 1.2rem 0; color: var(--soft); }
 
 /* ---------- Hero ---------- */
-.hero { padding: 4.5rem 0 2rem; background: var(--paper) !important; border-bottom: none; }
-.hero-grid { display: grid; grid-template-columns: 1fr 320px; gap: 4rem; align-items: center; }
+.hero { padding: 4.5rem 0 2rem; background: var(--paper) !important; border-bottom: none; text-align: left; }
+.hero .wrap { display: grid; grid-template-columns: 1fr 300px; gap: 4rem; align-items: center; }
 .portrait {
-  width: 300px; aspect-ratio: 1 / 1; border-radius: 50%; overflow: hidden;
+  width: 260px; aspect-ratio: 1 / 1; border-radius: 50%; overflow: hidden;
   background: var(--mist);
   border: 4px solid var(--white);
-  box-shadow: 0 20px 40px rgba(2, 132, 199, 0.15);
-  transition: transform 0.3s ease;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
 }
-.portrait:hover { transform: scale(1.02); }
 .portrait img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
-.flow { display: block; width: 100%; max-width: 500px; margin: 3rem auto 1rem; padding: 0 1.5rem; opacity: 0.85; }
+.flow { display: block; width: 100%; max-width: 450px; margin: 2rem auto 1rem; opacity: 0.8; }
 .flow path { fill: none; stroke: var(--flow); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 10 16; animation: stream 6s linear infinite; }
 .flow path:nth-child(2n) { animation-duration: 8s; opacity: 0.7; }
 .flow path:nth-child(3n) { animation-duration: 5s; }
 .flow .wing { fill: var(--ink); stroke: none; stroke-dasharray: none; animation: none; opacity: 1; }
 @keyframes stream { to { stroke-dashoffset: -260; } }
 
-/* ---------- Chips, Cards & Grids ---------- */
-.chips { display: flex; flex-wrap: wrap; gap: 0.6rem; padding: 0; margin: 0; list-style: none; }
+/* ---------- Chips & Tech Badges (façon Alexis de Lécluse) ---------- */
+.chips { display: flex; flex-wrap: gap; gap: 0.5rem; padding: 0; margin: 0; list-style: none; }
 .chips li { 
-  padding: 0.3rem 0.9rem; 
+  padding: 0.3rem 0.8rem; 
   background: var(--flow-light);
-  border: 1px solid rgba(2, 132, 199, 0.2); 
+  border: 1px solid rgba(37, 99, 235, 0.15); 
   border-radius: 999px; 
-  font-family: var(--display); 
-  font-size: 0.85rem; 
+  font-family: var(--font-main); 
+  font-size: 0.8rem; 
   font-weight: 600;
   color: var(--flow); 
 }
 .chips.small { margin: 1rem 0 0; }
-.chips.small li { font-size: 0.75rem; padding: 0.15rem 0.6rem; background: var(--paper); }
+.chips.small li { font-size: 0.75rem; padding: 0.2rem 0.6rem; background: var(--paper); }
 
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.8rem; margin-top: 2rem; }
-.grid.skills { margin-top: 0; }
+/* Grille de compétences avec logos/icônes intégrés */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  max-width: 700px;
+  margin: 1.5rem auto 0 auto;
+}
+
+.tech-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  background: var(--white);
+  border: 1px solid var(--mist);
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+  transition: transform 0.2s, border-color 0.2s;
+}
+section:nth-of-type(even) .tech-badge { background: var(--paper); }
+.tech-badge:hover {
+  transform: translateY(-2px);
+  border-color: var(--flow);
+}
+.tech-badge img, .tech-badge svg {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
 .sub + .grid { margin-top: 0; }
 
-.card, .skills > div {
-  padding: 2rem; 
+.card {
+  padding: 1.8rem; 
   background: var(--white); 
   border: 1px solid var(--mist); 
-  border-radius: 16px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -2px rgba(0, 0, 0, 0.02);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border-radius: 14px;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
-section:nth-of-type(even) .card, section:nth-of-type(even) .skills > div { background: var(--paper); }
+section:nth-of-type(even) .card { background: var(--paper); }
 .card:hover { 
-  transform: translateY(-6px); 
-  box-shadow: 0 20px 30px -10px rgba(10, 25, 47, 0.08); 
+  transform: translateY(-4px); 
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06); 
   border-color: var(--flow); 
 }
-.card p, .skills p { margin: 0; color: var(--soft); }
+.card p { margin: 0; color: var(--soft); font-size: 0.95rem; }
 .badge { 
   display: inline-block;
-  margin: 0 0 0.8rem !important; 
-  padding: 0.2rem 0.6rem;
+  margin: 0 0 0.6rem !important; 
+  padding: 0.15rem 0.5rem;
   background: #FFF1F2;
   border-radius: 6px;
-  font-family: var(--display); 
+  font-family: var(--font-main); 
   font-weight: 700; 
-  font-size: 0.75rem; 
+  font-size: 0.7rem; 
   letter-spacing: 0.05em; 
   text-transform: uppercase; 
   color: var(--signal); 
 }
 
-.timeline { display: grid; gap: 1.5rem; }
+.timeline { display: grid; gap: 1.5rem; max-width: 800px; margin: 0 auto; }
 
-/* ---------- Buttons & Action Group ---------- */
+/* ---------- Buttons ---------- */
 .action-group {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  align-items: center;
+  justify-content: center;
   margin: 2rem 0;
 }
 
@@ -168,54 +219,36 @@ section:nth-of-type(even) .card, section:nth-of-type(even) .skills > div { backg
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.8rem 1.6rem; 
+  padding: 0.7rem 1.4rem; 
   border-radius: 999px;
   background: var(--ink); 
   color: var(--white); 
   text-decoration: none;
-  font-family: var(--display); 
-  font-weight: 700;
-  font-size: 0.95rem;
-  box-shadow: 0 4px 12px rgba(10, 25, 47, 0.15);
-  transition: all 0.3s ease;
+  font-family: var(--font-main); 
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
 }
-.button:hover { background: var(--flow); color: var(--white); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(2, 132, 199, 0.3); }
+.button:hover { background: var(--flow); color: var(--white); transform: translateY(-2px); }
 
 .button.secondary {
   background: var(--white);
   color: var(--ink);
   border: 1px solid var(--mist);
-  box-shadow: none;
 }
-.button.secondary:hover {
-  background: var(--paper);
-  border-color: var(--ink);
-  color: var(--ink);
-}
+.button.secondary:hover { background: var(--paper); border-color: var(--ink); color: var(--ink); }
 
 /* ---------- Footer ---------- */
-footer { padding: 3.5rem 0; background: var(--ink); color: var(--white); text-align: center; }
-footer p { margin: 0.4rem 0; color: var(--mist); }
-footer a { color: var(--white); text-decoration: underline; }
+footer { padding: 3rem 0; background: var(--ink); color: var(--white); text-align: center; }
+footer p { margin: 0.3rem 0; color: #A1A1AA; font-size: 0.9rem; }
 
-/* ---------- Scroll reveal ---------- */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1); }
-.reveal.visible { opacity: 1; transform: none; }
-
-/* ---------- Mobile Responsive ---------- */
+/* ---------- Mobile ---------- */
 @media (max-width: 850px) {
   .topbar { padding: 0.8rem 1.2rem; }
   .logo { display: none; }
-  .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
-  .portrait { width: 220px; margin: 0 auto; }
+  .hero .wrap { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+  .portrait { width: 180px; margin: 0 auto; }
+  .hero { text-align: center; }
   .chips { justify-content: center; }
   section { padding: 4rem 0; }
-  .action-group { justify-content: center; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .flow path { animation: none; }
-  .reveal { opacity: 1; transform: none; transition: none; }
-  .card, .button { transition: none; }
 }
